@@ -1,4 +1,4 @@
-from odsXML import *
+from .odsXML import *
 
 class sheetCell:
     def __init__(self):
@@ -124,20 +124,20 @@ class sheetCell:
 
     # Cell Values
     def floatValue(self, value):
-        value = unicode(value)
+        value = str(value)
         self.cell.setAttribute("office:value-type", "float")
         self.cell.setAttribute("office:value", "%s" % value)
         self.cell.addChild(Element("text:p", value))
         return self
 
     def stringValue(self, value):
-        value = unicode(value)
+        value = str(value)
         self.cell.setAttribute("office:value-type", "string")
         self.cell.addChild(Element("text:p", value))
         return self
 
     def floatFormula(self, value, formula):
-        value = unicode(value)
+        value = str(value)
         self.cell.setAttribute("office:value-type", "float")
         self.cell.setAttribute("office:value", "%s" % value)
         self.cell.addChild(Element("text:p", value))
@@ -268,13 +268,13 @@ class sheetTable:
         return self.updateColumns(columnNum)
 
     def getColumnIndexList(self):
-        return range(0, self.maxColumn + 1)
+        return list(range(0, self.maxColumn + 1))
 
     def getRow(self, rowNum):
         return self.updateRows(rowNum)
 
     def getRowIndexList(self):
-        return range(0, self.maxRow + 1)
+        return list(range(0, self.maxRow + 1))
 
     def setSheetStyle(self, styleID):
         self.sheet.setAttribute("table:style-name", styleID)
@@ -525,7 +525,7 @@ class odsContent:
         return self.currentSheet
 
     def getSheetIndexList(self):
-        return range(0, self.documentSheets.childCount())
+        return list(range(0, self.documentSheets.childCount()))
 
     def makeSheet(self, sheetName):
         self.currentSheet = self.documentSheets.childCount()

@@ -1,4 +1,4 @@
-from odsXML import *
+from .odsXML import *
 
 class odsStyles:
     def __init__(self):

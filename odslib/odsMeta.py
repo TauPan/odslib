@@ -1,5 +1,5 @@
 import time
-from odsXML import *
+from .odsXML import *
 
 class odsMeta:
     def __init__(self):
