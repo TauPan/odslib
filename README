@@ -1,3 +1,5 @@
+The following was copied from https://bitbucket.org/angry_elf/odslib/src/default/:
+
 An easy to use module that creates ODS documents. Fork of original odslib-python (http://code.google.com/p/odslib-python/) which looking unmaintained. Applied unicode patch (issue #1 at odslib-python).
 
 Patches are welcome.
